@@ -1,0 +1,223 @@
+@font-face {
+  font-family: main;
+  src: url(2.otf);
+}
+
+:root {
+  --cube-width: 390px;
+  --translateZ: 195px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background: white;
+}
+
+header {
+  color: black;
+  display: flex;
+  align-items: center;
+  
+  justify-content: space-between;
+
+ 
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: absolute;
+  top: 2%;
+  left: 2%;
+}
+
+header h1 {
+  font-family: main;
+  margin: 0;
+  font-size: 40px;
+}
+
+header .sub-heading {
+  font-size: 20px;
+  margin: 0;
+}
+
+.cube-container {
+  perspective: 1000px;
+  position: absolute;
+  top: 25%;
+  left: 38%;
+
+}
+
+.cube-container .cube {
+  width: var(--cube-width);
+  height: var(--cube-width);
+  transform-style: preserve-3d;
+}
+
+.cube-container .cube-face {
+  width: var(--cube-width);
+  height: var(--cube-width);
+  position: absolute;
+  font-size: 80px;
+  background:black;
+  border: 0px solid black;
+  color: white;
+  font-weight: bold;
+  font-family: main;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cube-container .front {
+  background: black;
+  transform: translateZ(var(--translateZ));
+}
+
+.cube-container .back {
+  background: black;
+  transform: rotateY(180deg) translateZ(var(--translateZ));
+}
+
+.cube-container .left {
+  background: black;
+  color: white;
+  transform: rotateY(-90deg) translateZ(var(--translateZ));
+}
+
+.cube-container .right {
+  background: black;
+  color: white;
+  transform: rotateY(90deg) translateZ(var(--translateZ));
+}
+
+.cube-container .top {
+  background: black;
+  transform: rotateX(90deg) translateZ(var(--translateZ));
+}
+
+.cube-container .bottom {
+  background: black;
+  transform: rotateX(-90deg) translateZ(var(--translateZ));
+}
+
+.cube {
+  cursor: pointer;
+}
+
+
+.cube-face.front {
+  background-image: url('1.jpg'); /* 替换成前面图片的路径 */
+  background-size: cover; /* 确保图片覆盖整个面 */
+}
+
+.cube-face.back {
+  background-image: url('3.jpg'); /* 替换成背面图片的路径 */
+  background-size: cover;
+}
+
+.cube-face.left {
+  background-image: url('4.png'); /* 替换成左面图片的路径 */
+  background-size: cover;
+}
+
+.cube-face.right {
+  background-image: url('5.png'); /* 替换成右面图片的路径 */
+  background-size: cover;
+}
+
+.cube-face.top {
+  background-image: url('2.jpg'); /* 替换成上面图片的路径 */
+  background-size: cover;
+}
+
+.cube-face.bottom {
+  background-image: url('2.jpg'); /* 替换成下面图片的路径 */
+  background-size: cover;
+}
+
+
+
+.icon-img{
+position:absolute;
+left: 88%;
+top:85%;
+}
+
+
+
+.hover-text {
+  position: fixed;
+  bottom: 50%;
+  right: 5%;
+  color: black;
+  padding: 10px;
+  width: 300px;
+  height: auto;
+  z-index: 100;
+  overflow: auto;
+}
+
+.hover-text h {
+  font-size: 30px;
+  margin-top: 0;
+}
+
+.hover-text p {
+  font-size: 15px;
+}
+
+
+
+
+@media (max-width: 600px) {
+  .container {
+    width: 100%;
+  }
+
+  .cube-container {
+    perspective: 1000px;
+    position:relative;
+  
+  }
+  
+  .icon-img{
+    position:absolute;
+    right: 5%;
+    top:3%;
+    width: 20%;
+    height: auto;
+    }
+
+
+    :root {
+      --cube-width: 253.5px;
+      --translateZ: 126.75px;
+    }
+
+    .hover-text {
+      position: fixed;
+      bottom: 35%;
+      right: 20%;
+      color: black;
+      padding: 10px;
+      width: 350px;
+      height: auto;
+      z-index: 100;
+      overflow: auto;
+    }
+   
+    .hover-text h {
+      font-size: 40px;
+      margin-top: 0;
+    }
+    
+    .hover-text p {
+      font-size: 20px;
+    }
+}
